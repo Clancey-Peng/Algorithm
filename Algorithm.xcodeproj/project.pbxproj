@@ -20,6 +20,7 @@
 		22A60D3B248A2E8900895E53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22A60D39248A2E8900895E53 /* LaunchScreen.storyboard */; };
 		22A60D3E248A2E8900895E53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A60D3D248A2E8900895E53 /* main.m */; };
 		22A60D46248A339500895E53 /* SinglyLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A60D45248A339500895E53 /* SinglyLinkedList.m */; };
+		22A71A69249B661000761633 /* Browser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A71A68249B661000761633 /* Browser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		22A60D3D248A2E8900895E53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22A60D44248A339500895E53 /* SinglyLinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinglyLinkedList.h; sourceTree = "<group>"; };
 		22A60D45248A339500895E53 /* SinglyLinkedList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinglyLinkedList.m; sourceTree = "<group>"; };
+		22A71A67249B661000761633 /* Browser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Browser.h; sourceTree = "<group>"; };
+		22A71A68249B661000761633 /* Browser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Browser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 				22980723249330150027C561 /* ArrayStack.m */,
 				22980725249330370027C561 /* LinkedStack.h */,
 				22980726249330370027C561 /* LinkedStack.m */,
+				22A71A67249B661000761633 /* Browser.h */,
+				22A71A68249B661000761633 /* Browser.m */,
 			);
 			path = "栈";
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				22A60D2D248A2E8700895E53 /* AppDelegate.m in Sources */,
 				22A60D3E248A2E8900895E53 /* main.m in Sources */,
 				22A60D30248A2E8700895E53 /* SceneDelegate.m in Sources */,
+				22A71A69249B661000761633 /* Browser.m in Sources */,
 				229807172490D3C40027C561 /* NSArray+Enum.m in Sources */,
 				2298071F2491CD7C0027C561 /* NSArray+Description.m in Sources */,
 				22980727249330370027C561 /* LinkedStack.m in Sources */,

@@ -10,7 +10,6 @@
 
 @implementation ListNode
 
-
 - (instancetype)initNodeWithValue:(int)value {
     if (self = [super init]) {
         self.value = value;
