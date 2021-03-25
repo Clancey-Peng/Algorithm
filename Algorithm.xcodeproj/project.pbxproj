@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2219D80624A8437500B0C94B /* SMYContactPresentTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2219D80424A8437500B0C94B /* SMYContactPresentTool.m */; };
 		22980711248F86F90027C561 /* ListNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22980710248F86F90027C561 /* ListNode.m */; };
 		229807172490D3C40027C561 /* NSArray+Enum.m in Sources */ = {isa = PBXBuildFile; fileRef = 229807162490D3C40027C561 /* NSArray+Enum.m */; };
 		2298071F2491CD7C0027C561 /* NSArray+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298071E2491CD7C0027C561 /* NSArray+Description.m */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2219D80424A8437500B0C94B /* SMYContactPresentTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMYContactPresentTool.m; sourceTree = "<group>"; };
+		2219D80524A8437500B0C94B /* SMYContactPresentTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMYContactPresentTool.h; sourceTree = "<group>"; };
 		2298070F248F86F90027C561 /* ListNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListNode.h; sourceTree = "<group>"; };
 		22980710248F86F90027C561 /* ListNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListNode.m; sourceTree = "<group>"; };
 		229807152490D3C40027C561 /* NSArray+Enum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Enum.h"; sourceTree = "<group>"; };
@@ -63,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2219D80324A8437500B0C94B /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				2219D80524A8437500B0C94B /* SMYContactPresentTool.h */,
+				2219D80424A8437500B0C94B /* SMYContactPresentTool.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		2298072024932C910027C561 /* 链表 */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +118,7 @@
 		22A60D2A248A2E8700895E53 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				2219D80324A8437500B0C94B /* Test */,
 				2298072124932CD30027C561 /* 栈 */,
 				2298072024932C910027C561 /* 链表 */,
 				22A60D2B248A2E8700895E53 /* AppDelegate.h */,
@@ -199,6 +212,7 @@
 			files = (
 				22A60D33248A2E8700895E53 /* ViewController.m in Sources */,
 				22980711248F86F90027C561 /* ListNode.m in Sources */,
+				2219D80624A8437500B0C94B /* SMYContactPresentTool.m in Sources */,
 				22980724249330150027C561 /* ArrayStack.m in Sources */,
 				22A60D46248A339500895E53 /* SinglyLinkedList.m in Sources */,
 				22A60D2D248A2E8700895E53 /* AppDelegate.m in Sources */,

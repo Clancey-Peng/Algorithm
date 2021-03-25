@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
+/** <#description#> */
+@property (nonatomic, strong) UIWindow *mainWindow;
 
 @end
 
@@ -17,6 +20,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    window.rootViewController = [[ViewController alloc] init];
+    [window makeKeyAndVisible];
+    self.mainWindow = window;
     return YES;
 }
 

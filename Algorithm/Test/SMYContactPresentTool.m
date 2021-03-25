@@ -7,7 +7,7 @@
 //
 
 #import "SMYContactPresentTool.h"
-#import "SMYBusinessBase/SMYApp.h"
+//#import "SMYBusinessBase/SMYApp.h"
 
 static BOOL gIsPresenting = NO;
 static UIWindow *gPresentWindow = nil;
@@ -46,7 +46,7 @@ static SMYContactPresentTool *_manager = nil;
             gPresentWindow.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
         }
 #endif
-        gPresentWindow.windowLevel = 1;
+        gPresentWindow.windowLevel = 2;
     });
     @synchronized (self.sharedInstance) {
         if (gIsPresenting) {// 已经处于登录状态中，等待handler回调即可
@@ -62,20 +62,23 @@ static SMYContactPresentTool *_manager = nil;
     picker.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
 //    picker.modalPresentationStyle = UIModalPresentationFullScreen;
     [gPresentWindow.layer removeAllAnimations];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{// 等待可能存在的关闭登录页面动画结束
-        UINavigationController *presentNav = [[UINavigationController alloc] initWithRootViewController:picker];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{// 等待可能存在的关闭登录页面动画结束
+        UINavigationController *presentNav = [[UINavigationController alloc] initWithRootViewController:[UIViewController new]];
         gPresentWindow.rootViewController = presentNav;
         CGRect frame = [[UIScreen mainScreen] bounds];
-        if (animated) {
-            frame.origin.y += frame.size.height;
+//        if (animated) {
+//            frame.origin.y += frame.size.height;
+//            gPresentWindow.frame = frame;
+//            frame.origin.y -= frame.size.height;
+//            [UIView animateWithDuration:0.3 animations:^{
+//                gPresentWindow.frame = frame;
+//            } completion:^(BOOL finished) {
+//                [presentNav presentViewController:picker animated:YES completion:nil];
+//            }];
+//        } else {
             gPresentWindow.frame = frame;
-            frame.origin.y -= frame.size.height;
-            [UIView animateWithDuration:0.3 animations:^{
-                gPresentWindow.frame = frame;
-            } completion:nil];
-        } else {
-            gPresentWindow.frame = frame;
-        }
+        [presentNav presentViewController:picker animated:YES completion:nil];
+//        }
         gPresentWindow.hidden = NO;
         [gPresentWindow makeKeyWindow];
     });
@@ -84,7 +87,7 @@ static SMYContactPresentTool *_manager = nil;
 + (void)dismissPresentedViewController {
     // 先切换keyWindow，避免handlerItem中处理获取keyWindow出错
     [gPresentWindow endEditing:YES];
-    [SMYApp.sharedInstance.delegate.mainWindow makeKeyWindow];
+    [[UIApplication sharedApplication].keyWindow makeKeyWindow];
     @synchronized (self.sharedInstance) {
         gIsPresenting = NO;
     }

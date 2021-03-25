@@ -9,9 +9,11 @@
 #import "ViewController.h"
 #import "SinglyLinkedList.h"
 #import "NSArray+Enum.h"
+#import "SMYContactPresentTool.h"
+#import <ContactsUI/ContactsUI.h>
 //#import "NSArray+Description.h"
 
-@interface ViewController () 
+@interface ViewController () <CNContactPickerDelegate>
 
 @end
 
@@ -19,6 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.view setBackgroundColor:[UIColor greenColor]];
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(200, 200, 80, 80)];
+    [self.view addSubview:btn];
+    [btn setTitle:@"通讯录" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(presentContactPickerViewController) forControlEvents:UIControlEventTouchUpInside];
     
     // 指针
 //    NSInteger a = 1;
@@ -83,6 +92,26 @@
 //    ListNode *middleNode = [list3 getMiddleNode];
 //    [list3 deleteNodeAtLastIndex:4];
 //    NSLog(@"%@", list3);
+}
+
+- (void)presentContactPickerViewController {
+//    [SMYContactPresentTool presentContactPickerViewControllerWithAnimated:YES];
+    CNContactPickerViewController *picker = [[CNContactPickerViewController alloc] init];
+    picker.delegate = self;
+    picker.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
+    picker.modalPresentationStyle = UIModalPresentationFullScreen;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self presentViewController:picker animated:YES completion:nil];
+    });
+}
+
+
+- (void)contactPickerDidCancel:(CNContactPickerViewController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact {
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 
